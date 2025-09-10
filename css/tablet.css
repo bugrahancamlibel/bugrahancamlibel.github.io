@@ -24,6 +24,14 @@
     display: flex;
 }
 
+.language-selector {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 /* Hero Section */
 .hero-title {
     font-size: 2.8rem;
@@ -133,6 +141,11 @@
 .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+}
+
+.contact-info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .contact-form {
