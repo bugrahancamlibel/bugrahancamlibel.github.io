@@ -1,87 +1,305 @@
-/* Text  */
+/* Global Utility Classes */
 
-.text-center{
+/* Text Alignment */
+.text-center {
     text-align: center;
 }
 
-.heading-small{
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Typography */
+.heading-small {
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
-.heading-medium{
-    font-size: 1.5rem;
-}
-
-.heading-big{
+.heading-medium {
     font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.heading-large {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.heading-xl {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 /* Colors */
-
-.bg-dark-blue{
-    background: #062e51;
+.text-primary {
+    color: #2563eb;
 }
 
-.bg-light-blue{
-    background: #336ea2;
+.text-secondary {
+    color: #6b7280;
 }
 
-/*Buttons */
-
-.btn {
-    margin-top: 1.25rem;
-    padding: 0.7rem 3rem;
-    border-radius: 0.4rem;
-    letter-spacing: 0.5px;
+.text-accent {
+    color: #fbbf24;
 }
 
-.btn-primary {
-    background: #336ea2;
-}
-.btn-primary:hover{
-    color: #336ea2;
-    background: #fff;
-    border: 0.5px solid #336ea2;
+.text-white {
+    color: #ffffff;
 }
 
-/* Container */
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
+.text-dark {
+    color: #1f2937;
 }
 
-/* Forms */
-
-.form-group {
-    padding-top: 00.25rem;   
+/* Background Colors */
+.bg-primary {
+    background-color: #2563eb;
 }
 
-.form-group label{
-    display: block;
+.bg-secondary {
+    background-color: #f9fafb;
 }
 
-.form-control {
-    width: 100%;
-    padding: 0.35rem;
-    font-size: 1rem;
-    resize: none;
-    border-radius: 0.4rem;
+.bg-accent {
+    background-color: #fbbf24;
 }
 
-#contact .contact-form ul {
-    list-style-type: none;
+.bg-dark {
+    background-color: #1f2937;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Spacing */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.pt-1 { padding-top: 0.25rem; }
+.pt-2 { padding-top: 0.5rem; }
+.pt-3 { padding-top: 1rem; }
+.pt-4 { padding-top: 1.5rem; }
+.pt-5 { padding-top: 3rem; }
+
+.pb-1 { padding-bottom: 0.25rem; }
+.pb-2 { padding-bottom: 0.5rem; }
+.pb-3 { padding-bottom: 1rem; }
+.pb-4 { padding-bottom: 1.5rem; }
+.pb-5 { padding-bottom: 3rem; }
+
+/* Flexbox Utilities */
+.d-flex {
     display: flex;
-    margin-top: 1rem;
-    align-self: center;
-    
 }
 
-#contact .contact-form ul li a{
-    padding: 1rem;
-    font-size: 2rem;
+.flex-column {
+    flex-direction: column;
 }
 
-#contact .contact-form ul li a:hover {
-    opacity: 0.4;
+.flex-row {
+    flex-direction: row;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+/* Grid Utilities */
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 1rem; }
+.gap-4 { gap: 1.5rem; }
+.gap-5 { gap: 3rem; }
+
+/* Border Radius */
+.rounded-sm {
+    border-radius: 0.25rem;
+}
+
+.rounded {
+    border-radius: 0.5rem;
+}
+
+.rounded-lg {
+    border-radius: 1rem;
+}
+
+.rounded-xl {
+    border-radius: 1.5rem;
+}
+
+.rounded-full {
+    border-radius: 50%;
+}
+
+/* Shadows */
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Transitions */
+.transition {
+    transition: all 0.3s ease;
+}
+
+.transition-fast {
+    transition: all 0.15s ease;
+}
+
+.transition-slow {
+    transition: all 0.5s ease;
+}
+
+/* Hover Effects */
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Opacity */
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+/* Width */
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+.w-fit { width: fit-content; }
+
+/* Height */
+.h-full { height: 100%; }
+.h-auto { height: auto; }
+.h-screen { height: 100vh; }
+
+/* Position */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Z-Index */
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-auto { overflow: auto; }
+
+/* Display */
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.hidden { display: none; }
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+    .sm\:hidden { display: none; }
+    .sm\:block { display: block; }
+    .sm\:flex { display: flex; }
+    .sm\:grid { display: grid; }
+    .sm\:text-center { text-align: center; }
+    .sm\:text-left { text-align: left; }
+}
+
+@media (max-width: 768px) {
+    .md\:hidden { display: none; }
+    .md\:block { display: block; }
+    .md\:flex { display: flex; }
+    .md\:grid { display: grid; }
+    .md\:text-center { text-align: center; }
+    .md\:text-left { text-align: left; }
+    .md\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1024px) {
+    .lg\:hidden { display: none; }
+    .lg\:block { display: block; }
+    .lg\:flex { display: flex; }
+    .lg\:grid { display: grid; }
+    .lg\:text-center { text-align: center; }
+    .lg\:text-left { text-align: left; }
 }

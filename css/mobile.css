@@ -1,19 +1,328 @@
-#navbar {
-    flex-direction: column;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    overflow: hidden;
-    height: 81;
+/* Mobile Styles (500px and below) */
+
+/* Navigation */
+.nav-container {
+    padding: 0 15px;
 }
 
-#training .items {
-    flex-direction: column;
+.nav-logo h2 {
+    font-size: 1.3rem;
 }
 
-#training .items .item{
-    width: 100%;
+.nav-menu {
+    gap: 1.5rem;
+    padding: 1.5rem 0;
 }
 
-#courses .course {
+.nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+    padding: 0 10px;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+}
+
+.hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+    gap: 0.75rem;
+}
+
+.btn {
+    width: 200px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+}
+
+.hero-social {
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+/* Section Spacing */
+section {
+    padding: 2.5rem 0;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    padding: 0 10px;
+}
+
+/* Container */
+.container {
+    padding: 0 10px;
+}
+
+/* About Section */
+.about-text p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    padding: 1.25rem;
+}
+
+.stat h3 {
+    font-size: 1.5rem;
+}
+
+.stat p {
+    font-size: 0.9rem;
+}
+
+/* Timeline */
+.timeline {
+    padding: 0 10px;
+}
+
+.timeline::before {
+    left: 15px;
+}
+
+.timeline-item {
+    padding-left: 50px;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    left: 6px;
+    width: 18px;
+    height: 18px;
+}
+
+.timeline-content {
+    padding: 1.25rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-content li {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.skill-category {
+    padding: 1.25rem;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-tags {
+    gap: 0.4rem;
+}
+
+.skill-tag {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+}
+
+/* Education Section */
+.education-item {
+    padding: 1.25rem;
     flex-direction: column;
+    text-align: center;
+}
+
+.education-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.education-details h3 {
+    font-size: 1.1rem;
+}
+
+.education-details h4 {
+    font-size: 0.95rem;
+}
+
+.education-details p {
+    font-size: 0.85rem;
+}
+
+.achievements h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.achievement-item {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+}
+
+.achievement-item i {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.achievement-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.achievement-item p {
+    font-size: 0.85rem;
+}
+
+/* Contact Section */
+.contact-content {
+    gap: 1.5rem;
+}
+
+.contact-info {
+    gap: 1.5rem;
+}
+
+.contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    width: auto;
+    margin-bottom: 0.25rem;
+}
+
+.contact-item h4 {
+    font-size: 0.9rem;
+}
+
+.contact-item a {
+    font-size: 0.9rem;
+}
+
+.contact-form {
+    padding: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+    padding: 1.5rem 0;
+}
+
+.footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+}
+
+.footer-social a {
+    font-size: 1.1rem;
+}
+
+/* Text Sizes */
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+/* Spacing Adjustments */
+.gap-1 { gap: 0.15rem; }
+.gap-2 { gap: 0.35rem; }
+.gap-3 { gap: 0.75rem; }
+
+/* Margin/Padding Adjustments */
+.mt-1 { margin-top: 0.15rem; }
+.mt-2 { margin-top: 0.35rem; }
+.mt-3 { margin-top: 0.75rem; }
+
+.mb-1 { margin-bottom: 0.15rem; }
+.mb-2 { margin-bottom: 0.35rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+
+.pt-1 { padding-top: 0.15rem; }
+.pt-2 { padding-top: 0.35rem; }
+.pt-3 { padding-top: 0.75rem; }
+
+.pb-1 { padding-bottom: 0.15rem; }
+.pb-2 { padding-bottom: 0.35rem; }
+.pb-3 { padding-bottom: 0.75rem; }
+
+/* Hide elements on mobile */
+.mobile-hidden {
+    display: none;
+}
+
+/* Show elements only on mobile */
+.mobile-only {
+    display: block;
 }
