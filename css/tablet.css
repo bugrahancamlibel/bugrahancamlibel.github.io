@@ -1,5 +1,15 @@
 /* Tablet Styles (768px and below) */
 
+/* Hero Section */
+.hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.hero-visual {
+    display: none;
+}
+
 /* Navigation */
 .nav-menu {
     position: fixed;
