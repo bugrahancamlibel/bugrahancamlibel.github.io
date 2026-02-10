@@ -443,6 +443,7 @@
     <script>
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
 
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -450,7 +451,7 @@
         });
 
         // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
@@ -470,6 +471,33 @@
                 }
             });
         });
+
+        const sections = document.querySelectorAll('section[id]');
+
+        const setActiveLink = (sectionId) => {
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+            });
+        };
+
+        const updateActiveNavLink = () => {
+            const navOffset = document.querySelector('.navbar').offsetHeight;
+            let currentSection = sections[0] ? sections[0].id : null;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top - navOffset <= 0 && rect.bottom - navOffset > 0) {
+                    currentSection = section.id;
+                }
+            });
+
+            if (currentSection) {
+                setActiveLink(currentSection);
+            }
+        };
+
+        window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+        window.addEventListener('load', updateActiveNavLink);
 
         // Language switching functionality
         let currentLanguage = 'en';
