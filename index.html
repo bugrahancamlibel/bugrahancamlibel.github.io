@@ -473,6 +473,7 @@
         });
 
         const sections = document.querySelectorAll('section[id]');
+        const navbar = document.querySelector('.navbar');
 
         const setActiveLink = (sectionId) => {
             navLinks.forEach(link => {
@@ -481,15 +482,17 @@
         };
 
         const updateActiveNavLink = () => {
-            const navOffset = document.querySelector('.navbar').offsetHeight;
+            const navOffset = navbar ? navbar.offsetHeight : 0;
             let currentSection = sections[0] ? sections[0].id : null;
 
-            sections.forEach(section => {
+            for (let i = sections.length - 1; i >= 0; i -= 1) {
+                const section = sections[i];
                 const rect = section.getBoundingClientRect();
-                if (rect.top - navOffset <= 0 && rect.bottom - navOffset > 0) {
+                if (rect.top - navOffset <= 0) {
                     currentSection = section.id;
+                    break;
                 }
-            });
+            }
 
             if (currentSection) {
                 setActiveLink(currentSection);
