@@ -855,19 +855,6 @@ section {
     letter-spacing: -0.02em;
 }
 
-/* Remove old project styles */
-.project-icon {
-    display: none;
-}
-
-.project-content {
-    display: none;
-}
-
-.app-store-link {
-    display: none;
-}
-
 /* Education Section */
 .education-content {
     max-width: 800px;
