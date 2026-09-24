@@ -79,9 +79,6 @@
                         <a href="mailto:camlibelbugrahan@gmail.com" class="social-link">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="tel:REMOVED" class="social-link">
-                            <i class="fas fa-phone"></i>
-                        </a>
                     </div>
                 </div>
                 <div class="hero-visual" role="presentation" aria-hidden="true">
@@ -456,13 +453,6 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4 data-en="Phone" data-tr="Telefon">Phone</h4>
-                            <a href="tel:REMOVED">REMOVED</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
                         <div>
                             <h4>LinkedIn</h4>
@@ -580,8 +570,7 @@
                 }
             });
 
-            // Store language preference
-            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
         }
 
         // Language button event listeners
@@ -589,13 +578,27 @@
             btn.addEventListener('click', () => {
                 const lang = btn.getAttribute('data-lang');
                 switchLanguage(lang);
+                try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
             });
         });
 
-        // Load saved language preference
-        const savedLanguage = localStorage.getItem('preferredLanguage');
-        if (savedLanguage) {
-            switchLanguage(savedLanguage);
+        // Initial language: an explicit choice wins, otherwise follow the device
+        // language (Turkish devices get TR, everything else defaults to EN)
+        function getInitialLanguage() {
+            try {
+                const saved = localStorage.getItem('preferredLanguage');
+                if (saved === 'en' || saved === 'tr') return saved;
+            } catch (e) {}
+            const deviceLanguages = navigator.languages && navigator.languages.length
+                ? navigator.languages
+                : [navigator.language || navigator.userLanguage || ''];
+            const primary = (deviceLanguages[0] || '').toLowerCase();
+            return primary.startsWith('tr') ? 'tr' : 'en';
+        }
+
+        const initialLanguage = getInitialLanguage();
+        if (initialLanguage !== 'en') {
+            switchLanguage(initialLanguage);
         }
 
         // App Store icons: use a local file when one is provided (data-icon-src),
