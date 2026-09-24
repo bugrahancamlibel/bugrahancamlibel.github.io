@@ -311,8 +311,8 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="app-header">
-                        <div class="app-icon">
-                            <i class="fas fa-sparkles"></i>
+                        <div class="app-icon" data-app-id="6757758183">
+                            <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
                         </div>
                         <div class="app-info">
                             <h3 data-en="Genwall AI Photo Maker" data-tr="Genwall AI Fotoğraf Oluşturucu">Genwall AI Photo Maker</h3>
@@ -340,6 +340,62 @@
                         <span class="feature-badge"><i class="fas fa-robot"></i> <span data-en="AI Powered" data-tr="Yapay Zeka">AI Powered</span></span>
                     </div>
                     <a href="https://apps.apple.com/tr/app/genwall-ai-photo-maker/id6757758183?l=tr" target="_blank" class="app-store-button">
+                        <i class="fab fa-apple"></i>
+                        <div class="button-text">
+                            <span class="download-text" data-en="Download on the" data-tr="İndirin">Download on the</span>
+                            <span class="store-text" data-en="App Store" data-tr="App Store">App Store</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="app-header">
+                        <div class="app-icon" data-app-id="6760836724">
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3 data-en="Wovi - Magical Bedtime Stories" data-tr="Wovi - Büyülü Uyku Masalları">Wovi - Magical Bedtime Stories</h3>
+                            <p class="app-category" data-en="Education" data-tr="Eğitim">Education</p>
+                        </div>
+                        <div class="app-price">
+                            <span class="price-badge" data-en="FREE" data-tr="ÜCRETSİZ">FREE</span>
+                        </div>
+                    </div>
+                    <div class="app-description">
+                        <p data-en="Magical bedtime stories for children. Wovi turns bedtime into a calm routine with soothing tales that help little ones relax and drift off to sleep." data-tr="Çocuklar için büyülü uyku masalları. Wovi, küçüklerin rahatlayıp uykuya dalmasına yardımcı olan huzur veren masallarla yatma saatini sakin bir rutine dönüştürür.">Magical bedtime stories for children. Wovi turns bedtime into a calm routine with soothing tales that help little ones relax and drift off to sleep.</p>
+                    </div>
+                    <div class="app-badges">
+                        <span class="feature-badge"><i class="fas fa-mobile-alt"></i> <span data-en="iOS App" data-tr="iOS Uygulaması">iOS App</span></span>
+                        <span class="feature-badge"><i class="fas fa-book-open"></i> <span data-en="Bedtime Stories" data-tr="Uyku Masalları">Bedtime Stories</span></span>
+                    </div>
+                    <a href="https://apps.apple.com/tr/app/wovi-b%C3%BCy%C3%BCl%C3%BC-uyku-masallar%C4%B1/id6760836724?l=tr" target="_blank" rel="noopener" class="app-store-button">
+                        <i class="fab fa-apple"></i>
+                        <div class="button-text">
+                            <span class="download-text" data-en="Download on the" data-tr="İndirin">Download on the</span>
+                            <span class="store-text" data-en="App Store" data-tr="App Store">App Store</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="app-header">
+                        <div class="app-icon" data-app-id="6794892366">
+                            <i class="fas fa-gauge-high" aria-hidden="true"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3 data-en="Apex Drive Tracker" data-tr="Apex Drive Tracker">Apex Drive Tracker</h3>
+                            <p class="app-category" data-en="Utilities" data-tr="Araçlar">Utilities</p>
+                        </div>
+                        <div class="app-price">
+                            <span class="price-badge" data-en="FREE" data-tr="ÜCRETSİZ">FREE</span>
+                        </div>
+                    </div>
+                    <div class="app-description">
+                        <p data-en="Driving companion for iPhone that keeps track of your trips. Record distance, duration and routes automatically, then review your driving history and stats at a glance." data-tr="Sürüşlerinizi takip eden iPhone yol arkadaşı. Mesafe, süre ve rotaları otomatik olarak kaydedin, sürüş geçmişinizi ve istatistiklerinizi tek bakışta inceleyin.">Driving companion for iPhone that keeps track of your trips. Record distance, duration and routes automatically, then review your driving history and stats at a glance.</p>
+                    </div>
+                    <div class="app-badges">
+                        <span class="feature-badge"><i class="fas fa-mobile-alt"></i> <span data-en="iOS App" data-tr="iOS Uygulaması">iOS App</span></span>
+                        <span class="feature-badge"><i class="fas fa-route"></i> <span data-en="Trip Tracking" data-tr="Yol Takibi">Trip Tracking</span></span>
+                    </div>
+                    <a href="https://apps.apple.com/tr/app/apex-drive-tracker/id6794892366?l=tr" target="_blank" rel="noopener" class="app-store-button">
                         <i class="fab fa-apple"></i>
                         <div class="button-text">
                             <span class="download-text" data-en="Download on the" data-tr="İndirin">Download on the</span>
@@ -541,6 +597,66 @@
         if (savedLanguage) {
             switchLanguage(savedLanguage);
         }
+
+        // App Store icons: use a local file when one is provided (data-icon-src),
+        // otherwise pull the live artwork from Apple's public lookup API.
+        // The API has no CORS headers, so it is called through its JSONP callback.
+        function loadAppStoreIcons() {
+            const slots = Array.from(document.querySelectorAll('.app-icon[data-app-id]'));
+            if (!slots.length) {
+                return;
+            }
+
+            const setArtwork = (slot, url, name) => {
+                const img = document.createElement('img');
+                img.className = 'app-icon-img';
+                img.alt = `${name} app icon`;
+                img.addEventListener('load', () => slot.classList.add('has-artwork'));
+                img.addEventListener('error', () => img.remove());
+                img.src = url;
+                slot.appendChild(img);
+            };
+
+            const remote = [];
+            slots.forEach(slot => {
+                const localIcon = slot.dataset.iconSrc;
+                if (localIcon) {
+                    setArtwork(slot, localIcon, slot.parentElement.querySelector('h3').textContent);
+                } else {
+                    remote.push(slot);
+                }
+            });
+
+            if (!remote.length) {
+                return;
+            }
+
+            const ids = Array.from(new Set(remote.map(slot => slot.dataset.appId)));
+            const callbackName = 'onAppStoreArtwork';
+            const script = document.createElement('script');
+
+            const cleanUp = () => {
+                delete window[callbackName];
+                script.remove();
+            };
+
+            window[callbackName] = (data) => {
+                (data && data.results ? data.results : []).forEach(app => {
+                    const slot = remote.find(item => item.dataset.appId === String(app.trackId));
+                    const artwork = app.artworkUrl512 || app.artworkUrl100 || app.artworkUrl60;
+                    if (slot && artwork) {
+                        setArtwork(slot, artwork.replace(/\/\d+x\d+bb\./, '/512x512bb.'), app.trackName);
+                    }
+                });
+                cleanUp();
+            };
+
+            script.src = `https://itunes.apple.com/lookup?id=${ids.join(',')}&country=tr&callback=${callbackName}`;
+            script.onerror = cleanUp;
+            document.head.appendChild(script);
+        }
+
+        loadAppStoreIcons();
     </script>
 </body>
 </html>
