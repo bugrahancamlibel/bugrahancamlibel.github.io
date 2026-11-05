@@ -354,7 +354,7 @@ html[data-scrolled] .nav{background:rgba(7,9,12,.78);-webkit-backdrop-filter:blu
 /* small screens, touch, reduced motion */
 @media (max-width:640px){.hero{padding:112px 0 56px;min-height:0}.mail{padding:20px 24px}.tl{padding-left:34px}.tl-line{left:6px}.job{padding:22px 20px}.job::before{left:-33px}.mqs{padding:40px 0}}
 @media (hover:none){.card-in,.btn,.mail{transform:none!important}}
-@media (prefers-reduced-motion:reduce){.bc *,.bc *::before,.bc *::after{animation:none!important;transition:none!important}.hero-in{transform:none!important;opacity:1!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.intro,.ch,[data-in][data-r],[data-in][data-r=words] .wd>span,[data-in][data-r=kids]>*{animation:none!important}.hero-in{transform:none!important;opacity:1!important}.card-in,.sp,.btn,.mail,.job:hover,.chip:hover,.yr:hover{transform:none!important}}
 .bc[data-motion=off] *,.bc[data-motion=off] *::before,.bc[data-motion=off] *::after{animation:none!important;transition:none!important}
 .bc[data-motion=off] .hero-in{transform:none;opacity:1}
 .mnav[hidden],.menu-btn svg[hidden]{display:none}
